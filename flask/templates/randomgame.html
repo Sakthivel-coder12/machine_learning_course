@@ -1,0 +1,45 @@
+<html>
+    <h1>Guess the number</h1>
+    <input id = "in">
+    <button id = "b" onclick="ch()">check</button>
+    <p id = "pp">your right/your wrong!</p>
+    <p id = "s">Score :10</p>
+    <script>
+        var a = Math.floor(Math.random()*10)+1
+        console.log(a)
+        var n1 = document.getElementById("in")
+        var ss = document.getElementById("s")
+        var score = 10
+        function ch()
+        {
+            var n = Number(n1.value)
+            if(n == a)
+            {
+                score++
+                if(score>10)
+                {
+                    s.textContent = "Score :10"
+                }
+                else
+                {
+                    s.textContent = "Score :" + score
+                }
+                pp.textContent = "your right"  
+                alert("YOU WIN")
+            }
+            else
+            {
+                score--
+                if(score<0)
+                {
+                    s.textContent = "Score :0"
+                }
+                else
+                {
+                    s.textContent = "Score :" + score
+                }
+                pp.textContent = "your wrong"
+            }
+        }
+    </script>
+</html>

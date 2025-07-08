@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #container
+            {
+                position: relative;
+                left: 400px;
+                border: 5px solid black;
+                height: 300px;
+                width: 700px;
+                
+                background-color: rgb(252, 244, 244);
+            }
+            #ball {
+            width: 100px; 
+            height: 100px; 
+            background-color: red; 
+            border-radius: 50%; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 100px;     
+        }
+        #control
+        {
+            position: relative;
+            top: 100px;
+            left: 389px;
+        }
+        :hover#nn
+        {
+            cursor: pointer;
+        }
+        :hover#control
+        {
+            cursor: pointer;
+        }
+        #arrow {
+            border-collapse: collapse;
+            width: 50%;
+            text-align: center;
+        }
+        td {
+            font-size: 50px; 
+            padding: 20px; 
+            border: 1px solid black; 
+        }
+        button{
+            font-size: 30px;
+            padding: 10px;
+            width: 250px;
+            height: 50px;
+            background-color: whitesmoke;
+            border-radius: 30px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id = "container">
+            <h1>Welcome to the web page</h1>
+            <div id = "ball"></div>
+        </div>
+        <div id = "control">
+            <button id = "nn" class="ball_color" onclick = "c_color('ballc')" >BALL COLOR</button>
+            <button id = "nn" class="bgcolor" onclick = "c_color('bgc')" >BG COLOR</button><br>
+            <br><table id = "arrow" border="3px">
+                <tr>
+                    <td  onclick ="move('up')" id = "up"colspan="2">&#8613;</td>
+                    <td  onclick ="move('center')" id = "center">center</td>
+                </tr>
+                <tr>
+                    <td  onclick ="move('left')" id = "left">&#8610;</td>
+                    <td  onclick ="move('down')" id="down">&#8615;</td>
+                    <td  onclick ="move('righ')" id="right">&#8614;</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            function move(dir)
+            {
+                var b = document.getElementById("ball");
+                if(dir == 'up')
+                {
+                    ball.style.top = "20%";
+                    ball.style.left = "50%";
+                }
+                if(dir == 'down')
+                {
+                    ball.style.top = "80%";
+                    ball.style.left = "50%";
+                }
+                if(dir == 'left')
+                {
+                    ball.style.left = "20%";
+                    ball.style.top = "50%";
+                }
+                if(dir == 'righ')
+                {
+                    ball.style.left = "80%";
+                    ball.style.top = "50%";
+                }
+                if(dir == 'center')
+                {
+                    ball.style.left = "50%";
+                    ball.style.top = "50%";
+                }
+            }
+            function c_color(tar)
+            {
+                if (tar == 'bgc') {
+                var container = document.getElementById("container");
+                container.style.backgroundColor = getRandomColor();
+                }
+                if(tar == 'ballc')
+                {
+                    var ball = document.getElementById("ball");
+                    ball.style.backgroundColor = getRandomColor();
+                }
+            }
+
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        
+        </script>
+    </body>
+</html>

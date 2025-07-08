@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page</title>
+    <style>
+        body {
+            background: lightgoldenrodyellow;
+        }
+        .container {
+            position: relative;
+            padding: 100px;
+            top: 50px;
+            left: 320px;
+            background-color: rgb(6, 127, 233);
+            margin-left: 100px;
+            margin-right: 650px;
+            border-radius: 10px;
+            color: white;
+        }
+        h1 {
+            font-weight: 300;
+            margin-left: 50px;
+        }
+        .ballgame{
+            position: relative;
+            padding: 100px;
+            top: 100px;
+            border-radius: 10px;
+            left: 425px;
+            width: 100px;
+            height: 30px;
+            background-color: #dedcff;
+            text-align: center;
+        }
+        .randomnumber{
+            position: relative;
+            padding: 100px;
+            bottom: 130px;
+            border-radius: 10px;
+            left: 800px;
+            width: 100px;
+            height: 30px;
+            background-color: #dedcff;
+            text-align: center;
+        }
+        .ballgame:hover, .randomnumber:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: 0.3s ease-in-out;
+            background-color: #bcbaff;
+        }
+        .results
+        {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the game page...!</h1>
+        <h1>Click the game that you want to play</h1>
+    </div>
+    <div class="ballgame" onclick="window.location.href = '/gameball'">   
+        <!-- here we mentioned route name"/gameball" -->
+        <p>Ball Game</p>
+    </div>
+    <div class="randomnumber" onclick="window.location.href ='/rangame'">
+        <!-- here we mentioned route name "rangame" -->
+        <p>Random Number</p>
+    </div>
+    {% if results %}
+    <div  class = "results">
+        <center>
+            <h1>The login id and the password are : {{results}}</h1>
+        </center>
+    </div>
+    {%endif%}
+    <center>
+        <button onclick="window.location.href = '/login'">Go for login</button>
+    </center>
+</body>
+</html>
