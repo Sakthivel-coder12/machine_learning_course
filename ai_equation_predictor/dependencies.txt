@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+plotly
+scipy
+scikit-learn
+sympy
+opencv-python
+pillow
+pytesseract
+openpyxl
+matplotlib
