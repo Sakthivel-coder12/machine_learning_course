@@ -1,0 +1,19 @@
+cuda=12.1
+pip install tensorflow==2.15.1
+
+
+Download CUDA 12.1 from:
+https://developer.nvidia.com/cuda-12-1-0-download-archive
+
+Download cuDNN 8.9.5 for CUDA 12.x from:
+
+https://developer.nvidia.com/rdp/cudnn-archive
+
+run powershell as administrator mode and do the following
+(use appropriate file path)
+
+Copy-Item -Path "C:\temp\cudnn-windows-x86_64-8.9.5.30_cuda12-archive\bin\*" `-Destination "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin" -Recurse -Force
+
+Copy-Item -Path "C:\temp\cudnn-windows-x86_64-8.9.5.30_cuda12-archive\include\*" `-Destination "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include" -Recurse -Force
+
+Copy-Item -Path "C:\temp\cudnn-windows-x86_64-8.9.5.30_cuda12-archive\lib\x64\*" `-Destination "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\lib\x64" -Recurse -Force
