@@ -1,0 +1,8 @@
+{
+  "seq_length": 10,
+  "vocab_size": 5000,
+  "total_words": 5000,
+  "max_seq_len": 9,
+  "final_accuracy": 0.14990000426769257,
+  "final_loss": 5.862063407897949
+}
